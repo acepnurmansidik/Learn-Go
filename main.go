@@ -3,16 +3,14 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: OPERASI PERBANDINGAN
+	// TODO: OPERASI BOOLEAN
+	nilaiAkhir := 90
+	absensi := 80
 
-	val1 := 100
-	val2 := 200
+	var lulusNilaiAkhir bool = nilaiAkhir >= 80
+	lulusAbsensi := absensi >= 80
 
-	fmt.Println(val1 > val2)
-	fmt.Println(val1 >= val2)
-	fmt.Println(val1 < val2)
-	fmt.Println(val1 <= val2)
-	fmt.Println(val1 == val2)
-	fmt.Println(val1 != val2)
+	lulus := lulusNilaiAkhir && lulusAbsensi
+	fmt.Println(lulus)
 
 }
