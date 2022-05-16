@@ -3,25 +3,36 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: ARAAY
+	// TODO: SLICE
 
-	var names [3]string
-
-	names[0] = "Acep"
-	names[1] = "Nurman"
-	names[2] = "Sidik"
-
-	fmt.Println(names[0])
-
-	// deklarasi array langsung di value
-	var values = [3]int{
-		89,
-		87,
-		25,
+	days := []string{
+		"senin",
+		"selasa",
+		"rabu",
+		"kamis",
+		"jum'at",
+		"sabtu",
+		"minggu",
 	}
-	fmt.Println(values)
-	fmt.Println(values[2])
 
-	// function array
-	fmt.Println(len(values))
+	var slice1 = days[5:7]
+
+	fmt.Println(slice1)
+
+	fmt.Println(len(slice1))
+	fmt.Println(cap(slice1))
+
+	// slice1[0] = "sabtu lagi"
+	// fmt.Println(slice1)
+
+	// days[5] = "sabtu lagi"
+	// fmt.Println(days)
+
+	// Array vs Slice
+
+	iniArray := [3]int{1,2,3}
+	iniSlice := []int{1,2,3}
+
+	fmt.Println(iniArray)
+	fmt.Println(iniSlice)
 }
