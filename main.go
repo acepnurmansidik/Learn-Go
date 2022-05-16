@@ -3,31 +3,20 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: VARIABEL
-	var name string
+	// TODO: CONSTANT
 
-	name = "Acep"
-	fmt.Println(name)
-	name = "Acep Nurman Sidik"
-	fmt.Println(name)
+	const age uint8 = 4
+	const address = "Florida"
 
-	// =============
-	var age uint8 = 24
-	fmt.Println(age)
-
-	// deklasrasi variabel tanpa var (hanya diawal)
-	address:="Luzern"
-	fmt.Println(address)
-	address = "Florida"
 	fmt.Println(address)
 
-	// Deklarasi multiple variable
-	var (
+	// Deklarasi multiple constant
+	const (
 		firstname="acep nurman "
 		lastname="sidik"
 	)
 
-	fmt.Print(firstname)
+	fmt.Println(firstname)
 	fmt.Println(lastname)
 
 }
