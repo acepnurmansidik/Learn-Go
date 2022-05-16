@@ -3,13 +3,31 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: STRING
-	fmt.Println("ACEP NURMAN SIDIK")
+	// TODO: VARIABEL
+	var name string
 
-	// TODO: function untuk string
-	// utk mengitung jumlah string
-	fmt.Println(len("ACEP"))
-	// mengambil karakter pada posisi yang ditentukan
-	fmt.Println("ACEP"[0])
-	fmt.Println("ACEP"[1])
+	name = "Acep"
+	fmt.Println(name)
+	name = "Acep Nurman Sidik"
+	fmt.Println(name)
+
+	// =============
+	var age uint8 = 24
+	fmt.Println(age)
+
+	// deklasrasi variabel tanpa var (hanya diawal)
+	address:="Luzern"
+	fmt.Println(address)
+	address = "Florida"
+	fmt.Println(address)
+
+	// Deklarasi multiple variable
+	var (
+		firstname="acep nurman "
+		lastname="sidik"
+	)
+
+	fmt.Print(firstname)
+	fmt.Println(lastname)
+
 }
