@@ -3,14 +3,25 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: OPERASI BOOLEAN
-	nilaiAkhir := 90
-	absensi := 80
+	// TODO: ARAAY
 
-	var lulusNilaiAkhir bool = nilaiAkhir >= 80
-	lulusAbsensi := absensi >= 80
+	var names [3]string
 
-	lulus := lulusNilaiAkhir && lulusAbsensi
-	fmt.Println(lulus)
+	names[0] = "Acep"
+	names[1] = "Nurman"
+	names[2] = "Sidik"
 
+	fmt.Println(names[0])
+
+	// deklarasi array langsung di value
+	var values = [3]int{
+		89,
+		87,
+		25,
+	}
+	fmt.Println(values)
+	fmt.Println(values[2])
+
+	// function array
+	fmt.Println(len(values))
 }
