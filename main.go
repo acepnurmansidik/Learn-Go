@@ -3,20 +3,21 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: CONSTANT
+	// TODO: KONVERSI TIPE DATA
 
-	const age uint8 = 4
-	const address = "Florida"
+	var nilai32 int32 = 128
+	var nilai64 int64 = int64(nilai32)
+	var nilai8 int8 = int8(nilai32)
 
-	fmt.Println(address)
+	fmt.Println(nilai32)
+	fmt.Println(nilai64)
+	fmt.Println(nilai8)
 
-	// Deklarasi multiple constant
-	const (
-		firstname="acep nurman "
-		lastname="sidik"
-	)
+	name := "acep"
+	a := string(name[0])
 
-	fmt.Println(firstname)
-	fmt.Println(lastname)
+	fmt.Println(name)
+	fmt.Println(a)
+
 
 }
