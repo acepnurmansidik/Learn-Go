@@ -1,37 +1,42 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main(){
-	// TODO: PNEGKONDISIAN /PERCABANGAN
+	// TODO: PERULANGAN
 
-	name := "acep"
-
-	switch name{
-	case "Nurman":
-		fmt.Println("Hello nurmnan")
-	case "Sidik":
-		fmt.Println("Hello sidik")
-	default:
-		fmt.Println("kenalan yu")
-	}
-	// short statement
-	switch length := len(name); length > 5{
-	case true:
-		fmt.Println("Too long")
-	case false:
-		fmt.Println("Too short")
+	// for biasa
+	fmt.Println("####### Perulangan For biasa ####")
+	counter := 1
+	for counter <= 3{
+		fmt.Println("Perulangan ke", counter)
+		counter++
 	}
 
-	// swith with expression
-	switch {
-	case len(name) > 10:
-		fmt.Println("nama terlalu panjang")
-	case len(name) > 5:
-		fmt.Println("nama lumayan panjang")
-	default:
-		fmt.Println("nama terlalu pendek")
+	// for dengan statement
+	fmt.Println("")
+	fmt.Println("####### Perulangan for dengan statement ####")
+	for counter1 := 1; counter1 <= 3; counter1++{
+		fmt.Println("Perulangan ke", counter1)
 	}
 
+	// for range
+	fmt.Println("")
+	fmt.Println("####### Perulangan for dengan statement ####")
+	// array / slice
+	// tanda underscore berfungsi jika key nya tidak digunakan
+	cars := []string{"Tesla", "Honda", "Toyoya"}
+	for _, car := range cars {
+		fmt.Println(car)
+	}
+	fmt.Println("")
+	person := make(map[string]string)
+	person["name"] = "acep"
+	person["address"] = "garut"
 
+	for key, value := range person{
+		fmt.Println(key,"=", value)
+	}
 }
