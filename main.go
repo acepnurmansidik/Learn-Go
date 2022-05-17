@@ -3,36 +3,22 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: SLICE
+	// TODO: Tipe data map
 
-	days := []string{
-		"senin",
-		"selasa",
-		"rabu",
-		"kamis",
-		"jum'at",
-		"sabtu",
-		"minggu",
+	person := map[string]string{
+		"name": "acep",
+		"address": "garut",
+		"age": "23",
 	}
 
-	var slice1 = days[5:7]
+	fmt.Println(person)
+	// add map
+	person["role"] = "Fulsstack Developer"
+	fmt.Println(person)
+	// modify map
+	person["age"] = "20"
+	fmt.Println(person)
+	// delete map
+	delete(person, "age")
 
-	fmt.Println(slice1)
-
-	fmt.Println(len(slice1))
-	fmt.Println(cap(slice1))
-
-	// slice1[0] = "sabtu lagi"
-	// fmt.Println(slice1)
-
-	// days[5] = "sabtu lagi"
-	// fmt.Println(days)
-
-	// Array vs Slice
-
-	iniArray := [3]int{1,2,3}
-	iniSlice := []int{1,2,3}
-
-	fmt.Println(iniArray)
-	fmt.Println(iniSlice)
 }
