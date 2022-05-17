@@ -3,22 +3,15 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: Tipe data map
+	// TODO: PNEGKONDISIAN /PERCABANGAN
 
-	person := map[string]string{
-		"name": "acep",
-		"address": "garut",
-		"age": "23",
+	// if else
+	name := "acep"
+	if name == "nurman"{
+		fmt.Println("Hai acep")
+	}else{
+		fmt.Println("Kenalin ")
 	}
 
-	fmt.Println(person)
-	// add map
-	person["role"] = "Fulsstack Developer"
-	fmt.Println(person)
-	// modify map
-	person["age"] = "20"
-	fmt.Println(person)
-	// delete map
-	delete(person, "age")
 
 }
