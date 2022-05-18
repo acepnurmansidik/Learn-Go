@@ -3,45 +3,20 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: FUNCTION
+	// TODO: VARIADIC FUNCTION
+	result := sumAll(10,10)
+	fmt.Println(result)
 
-	// basic function
-	sayHello()
-
-	// function with paramaeter
-	sayHello2("acep", "nurman")
-
-	// function returning value
-	fmt.Println(sayHelloReturn("acep"))
-
-	// returning multiple value
-	firstName, _, lastName := getFullName()
-	fmt.Println(firstName,lastName)
-
-	// Named returning values
-	_,b,c := getFullName2()
-	fmt.Println(b,c)
+	// slice parameter
+	slice := []int{10,20}
+	total := sumAll(slice...)
+	fmt.Println(total)
 }
 
-func sayHello(){
-	fmt.Println("Hello World")
-}
-
-func sayHello2(firstName string, lastName string){
-	fmt.Println("Hello", firstName,lastName)
-}
-
-func sayHelloReturn(name string)string{
-	return "Hello " + name
-}
-
-func getFullName()(string,string,string){
-	return "acep","nurman","sidik"
-}
-
-func getFullName2()(firstName, middlName, lastName string){
-	firstName ="acep"
-	middlName ="nurman"
-	lastName = "sidik"
-	return
+func sumAll(numbers ...int) int{
+	total := 0
+	for _, value := range numbers {
+		total += value
+	}
+	return total
 }
