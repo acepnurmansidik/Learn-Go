@@ -17,6 +17,10 @@ func main(){
 	// returning multiple value
 	firstName, _, lastName := getFullName()
 	fmt.Println(firstName,lastName)
+
+	// Named returning values
+	_,b,c := getFullName2()
+	fmt.Println(b,c)
 }
 
 func sayHello(){
@@ -33,4 +37,11 @@ func sayHelloReturn(name string)string{
 
 func getFullName()(string,string,string){
 	return "acep","nurman","sidik"
+}
+
+func getFullName2()(firstName, middlName, lastName string){
+	firstName ="acep"
+	middlName ="nurman"
+	lastName = "sidik"
+	return
 }
