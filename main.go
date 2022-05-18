@@ -13,6 +13,10 @@ func main(){
 
 	// function returning value
 	fmt.Println(sayHelloReturn("acep"))
+
+	// returning multiple value
+	firstName, _, lastName := getFullName()
+	fmt.Println(firstName,lastName)
 }
 
 func sayHello(){
@@ -25,4 +29,8 @@ func sayHello2(firstName string, lastName string){
 
 func sayHelloReturn(name string)string{
 	return "Hello " + name
+}
+
+func getFullName()(string,string,string){
+	return "acep","nurman","sidik"
 }
