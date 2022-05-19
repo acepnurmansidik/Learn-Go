@@ -3,14 +3,23 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: ANONYMOUS FUNCTION
-	blocklist := func (name string)bool  {
-		return name == "admin"
+	// TODO: RECURSIVE FUNCTION
+
+	// menggunakan for loops
+	blocklist := func (value int)int  {
+		result := 1
+		for i := value; i > 0; i--{
+			result *= i
+		}
+		return result
 	}
 
-	registerUser("admin", blocklist)
-	registerUser("acep", blocklist)
+	fmt.Println("without recursive")
+	fmt.Println(blocklist(5))
 
+	// Recursive
+	fmt.Println("recursive")
+	fmt.Println(factorialRecursive(5))
 }
 
 // jika terlalu aonajng bisa menggunakan alias
@@ -24,3 +33,11 @@ func registerUser(name string, blocklist Blocklist){
 	}
 }
 
+	func factorialRecursive(value int)int  {
+		if(value == 1){
+			return 1
+		}else {
+			return value * factorialRecursive(value-1)
+		}
+		
+	}
