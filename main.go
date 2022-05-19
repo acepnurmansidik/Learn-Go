@@ -3,20 +3,12 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: VARIADIC FUNCTION
-	result := sumAll(10,10)
-	fmt.Println(result)
+	// TODO: FUNCTION AS VALUE
 
-	// slice parameter
-	slice := []int{10,20}
-	total := sumAll(slice...)
-	fmt.Println(total)
+	result := getGoodBye
+	fmt.Println(result("acep"))
 }
 
-func sumAll(numbers ...int) int{
-	total := 0
-	for _, value := range numbers {
-		total += value
-	}
-	return total
+func getGoodBye(name string)string{
+	return "Good bye "+name 
 }
