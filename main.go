@@ -3,24 +3,24 @@ package main
 import "fmt"
 
 func main(){
-	// TODO: FUNCTION AS PARAMETER
+	// TODO: ANONYMOUS FUNCTION
+	blocklist := func (name string)bool  {
+		return name == "admin"
+	}
 
-	sayHelloWithFilter("Anjing",spamFilter)
+	registerUser("admin", blocklist)
+	registerUser("acep", blocklist)
 
 }
 
 // jika terlalu aonajng bisa menggunakan alias
-type Filter func(string) string
+type Blocklist func(string) bool
 
-func sayHelloWithFilter(name string, filter Filter){
-	nameFilter := filter(name)
-	fmt.Println("Hello",nameFilter)
-}
-
-func spamFilter(name string)string{
-	if (name == "Anjing"){
-		return "..."
-	}else{
-		return name
+func registerUser(name string, blocklist Blocklist){
+	if blocklist(name) {
+		fmt.Println("Yo're blocked",name)
+	}else {
+		fmt.Println("Welcome",name)
 	}
 }
+
