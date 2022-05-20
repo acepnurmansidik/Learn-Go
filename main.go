@@ -10,6 +10,14 @@ type Customer struct{
 	Age int
 }
 
+func (customer Customer) sayHello(name string) {
+	fmt.Println("Hello", name, "my name is",customer.Name)	
+}
+
+func (name Customer)sayHuuu(){
+	fmt.Println("Huu from",name.Name)
+}
+
 func main(){
 	// TODO: STRUCT
 	
@@ -29,6 +37,10 @@ func main(){
 	}
 
 	fmt.Println(people)
+
+	// struct method
+	person.sayHello("nurman")
+	person.sayHuuu()
 
 }
 
