@@ -4,43 +4,39 @@ import (
 	"fmt"
 )
 
-type Customer struct{
+type Person struct{
 	Name string
-	Address string
-	Age int
 }
 
-func (customer Customer) sayHello(name string) {
-	fmt.Println("Hello", name, "my name is",customer.Name)	
+type Animal struct{
+	Name string
 }
 
-func (name Customer)sayHuuu(){
-	fmt.Println("Huu from",name.Name)
+type HasName interface{
+	GetName() string
 }
+
+func sayHello(name HasName){
+	fmt.Println("Hello",name.GetName())
+}
+
+func (person Person) GetName()string{
+	return person.Name
+}
+
+func (animal Animal) GetName() string{
+	return animal.Name
+}
+
 
 func main(){
-	// TODO: STRUCT
+	// TODO: INTERFACE
+
+	// interface biasa digunakan untuk function2 yang general
+	person := Person{Name: "acep"}
+	sayHello(person)
 	
-	// kumpulan dari beberapa data
-	var person Customer
-	person.Name = "acep"
-	person.Address = "Garut"
-	person.Age = 23
-
-	fmt.Println(person)
-
-	// struct literal
-	people := Customer{
-		Name: "nurman",
-		Address: "garut",
-		Age: 23,
-	}
-
-	fmt.Println(people)
-
-	// struct method
-	person.sayHello("nurman")
-	person.sayHuuu()
-
+	cat := Animal{Name: "Kucing"}
+	sayHello(cat)
 }
 
