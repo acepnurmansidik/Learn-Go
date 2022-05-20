@@ -4,22 +4,24 @@ import (
 	"fmt"
 )
 
-func Ups(value int) interface{} {
-	if value == 1 {
-		return 1
-	} else if value == 2 {
-		return true
+func NewMap(name string) map[string]string {
+	if name == "" {
+		return nil
 	} else {
-		return "Ups"
+		return map[string]string{
+			"name": name,
+		}
 	}
 }
 
 func main() {
-	// TODO: INTERFACE
+	// TODO: NIL
 
-	// interface biasa digunakan untuk function2 yang general
+	var person map[string]string = NewMap("")
 
-	// interface kosong
-	var data interface{} = Ups(5)
-	fmt.Println(data)
+	if person == nil {
+		fmt.Println("Data kosng")
+	} else {
+		fmt.Println(person)
+	}
 }
