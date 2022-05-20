@@ -1,27 +1,26 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
-func NewMap(name string) map[string]string {
-	if name == "" {
-		return nil
+func Pembagian(nilai int, pembagi int) (int, error) {
+	if pembagi == 0 {
+		return 0, errors.New("Pembagi tidak boleh 0")
 	} else {
-		return map[string]string{
-			"name": name,
-		}
+		result := nilai / pembagi
+		return result, nil
 	}
 }
 
 func main() {
-	// TODO: NIL
+	// TODO: ERROR INTERFACE
 
-	var person map[string]string = NewMap("")
-
-	if person == nil {
-		fmt.Println("Data kosng")
+	hasil, err := Pembagian(100, 10)
+	if err == nil {
+		fmt.Println("hasil", hasil)
 	} else {
-		fmt.Println(person)
+		fmt.Println("Error", err.Error())
 	}
 }
