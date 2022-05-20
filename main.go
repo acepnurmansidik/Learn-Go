@@ -1,26 +1,28 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 )
 
-func Pembagian(nilai int, pembagi int) (int, error) {
-	if pembagi == 0 {
-		return 0, errors.New("Pembagi tidak boleh 0")
-	} else {
-		result := nilai / pembagi
-		return result, nil
-	}
+func random() interface{} {
+	return "acep"
 }
 
 func main() {
-	// TODO: ERROR INTERFACE
+	// TODO: TYPE ASSORTIONS
 
-	hasil, err := Pembagian(100, 10)
-	if err == nil {
-		fmt.Println("hasil", hasil)
-	} else {
-		fmt.Println("Error", err.Error())
+	var result interface{} = random()
+	// rubah yang tadinya interface kosong menjadi string
+	// var resultString string = result.(string)
+	// fmt.Println(resultString)
+
+	// type mengambil tipe dari interface kosong
+	switch value := result.(type) {
+	case string:
+		fmt.Println("Value", value, "is string")
+	case int:
+		fmt.Println("Value", value, "is integer")
+	default:
+		fmt.Println("Unknown type")
 	}
 }
