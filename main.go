@@ -8,8 +8,8 @@ type Address struct{
 	City, Province, Country string
 }
 
-func random() interface{} {
-	return "acep"
+func changeCountryToIndonesia(address *Address){
+	address.Country = "Indonesia"
 }
 
 func main() {
@@ -37,5 +37,12 @@ func main() {
 	address4.City = "Surabaya"
 	fmt.Println(address4)
 
+	// POINTER DI FUNCTION
 
+	alamat := Address{
+		City: "Malang",
+		Province: "Jawa Timur",
+	}
+	changeCountryToIndonesia(&alamat)
+	fmt.Println(alamat)
 }
