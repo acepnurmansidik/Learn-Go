@@ -4,25 +4,38 @@ import (
 	"fmt"
 )
 
+type Address struct{
+	City, Province, Country string
+}
+
 func random() interface{} {
 	return "acep"
 }
 
 func main() {
-	// TODO: TYPE ASSORTIONS
+	// TODO: POINTER
 
-	var result interface{} = random()
-	// rubah yang tadinya interface kosong menjadi string
-	// var resultString string = result.(string)
-	// fmt.Println(resultString)
+	// pass by value, jika di asignment ke variabel lain valuenya kan di copy
+	address1 := Address{"Subang", "West Java", "Indonesia"}
+	address2 := &address1
+	address3 := &address1
 
-	// type mengambil tipe dari interface kosong
-	switch value := result.(type) {
-	case string:
-		fmt.Println("Value", value, "is string")
-	case int:
-		fmt.Println("Value", value, "is integer")
-	default:
-		fmt.Println("Unknown type")
-	}
+	address2.City = "Garut"
+
+	// jka ditambahkan pointer seolah akan membuat memory baru
+	// address2 = &Address{"Subang", "West Java", "Indonesia"}
+
+	// jika ditambahkan bintang di depannya maka akan memaksa semua variabel ke address 2
+	*address2 = Address{"Subang", "West Java", "Indonesia"}
+
+	fmt.Println(address1)
+	fmt.Println(address2)
+	fmt.Println(address3)
+
+	// pointer new, akan mengembalikan data kosong/tidak ada data awal
+	address4 := new(Address)
+	address4.City = "Surabaya"
+	fmt.Println(address4)
+
+
 }
