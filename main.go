@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"golang/hello"
+	"golang/database"
 )
 
 func main() {
-	// TODO: PACKAGE & IMPORT
-	// jika ingim import funtion huruf awalnya harus besar
-	result := hello.SayHello("acep")
+	// TODO: PACKAGE INITIALIZATION
+	// init berguna untuk mejalankan untuk pertama kali dieksekusi
+
+	result := database.GetDatabase()
 	fmt.Println(result)
 }
