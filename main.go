@@ -2,13 +2,21 @@ package main
 
 import (
 	"fmt"
-	"golang/database"
+	"os"
 )
 
 func main() {
-	// TODO: PACKAGE INITIALIZATION
-	// init berguna untuk mejalankan untuk pertama kali dieksekusi
+	// TODO: PACKAGE OS
 
-	result := database.GetDatabase()
+	// Args
+	result := os.Args
 	fmt.Println(result)
+	
+	// hostname, mengambil nama host system operasi yangi digunakan
+	hostname, err := os.Hostname()
+	if err == nil{
+		fmt.Println(hostname)
+	}else {
+		fmt.Println("Error",err.Error())
+	}
 }
