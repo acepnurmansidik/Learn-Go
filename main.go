@@ -1,28 +1,22 @@
 package main
 
 import (
-	"container/list"
+	"container/ring"
 	"fmt"
+	"strconv"
 )
 
 func main() {
-	// TODO: PACKAGE CONTAINER/LIST
+	// TODO: PACKAGE CONTAINER/RING
 
-	data := list.New()
+	data := ring.New(5)
 
-	data.PushBack("acep")
-	data.PushBack("nurman")
-	data.PushBack("sidik")
-	data.PushFront("budi")
-
-	// depan ke belakang
-	for element := data.Front(); element != nil; element = element.Next(){
-		fmt.Println(element.Value)
+	for i := 0; i < data.Len(); i++ {
+		data.Value = "Data " + strconv.FormatInt(int64(i), 10)
+		data = data.Next()
 	}
-	fmt.Println("===========================================")
 
-	// belakang ke depan
-	for element := data.Back(); element != nil; element = element.Prev(){
-		fmt.Println(element.Value)
-	}
+	data.Do(func(value interface{}) {
+		fmt.Println(value)
+	})
 }
