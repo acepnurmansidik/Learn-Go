@@ -2,21 +2,17 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"strings"
 )
 
 func main() {
-	// TODO: PACKAGE OS
+	// TODO: PACKAGE STRING
 
-	// Args
-	result := os.Args
-	fmt.Println(result)
-	
-	// hostname, mengambil nama host system operasi yangi digunakan
-	hostname, err := os.Hostname()
-	if err == nil{
-		fmt.Println(hostname)
-	}else {
-		fmt.Println("Error",err.Error())
-	}
+	fmt.Println(strings.Contains("Acep Nurman Sidik", "Nurman"))
+	fmt.Println(strings.Split("Acep Nurman Sidik", " ")[0])
+	fmt.Println(strings.ToLower("Acep Nurman Sidik"))
+	fmt.Println(strings.ToUpper("Acep Nurman Sidik"))
+	fmt.Println(strings.Trim("    Acep Nurman Sidik      ", " "))
+	fmt.Println(strings.ReplaceAll("Acep Nurman Sidik", "Nurman","Budi"))
+
 }
