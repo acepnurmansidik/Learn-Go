@@ -2,28 +2,16 @@ package main
 
 import (
 	"fmt"
-	"strconv"
+	"math"
 )
 
 func main() {
-	// TODO: PACKAGE STRICONV
+	// TODO: PACKAGE MATCH
 
-	// parse to bool
-	result, err := strconv.ParseBool("true")
-	if err == nil{
-		fmt.Println(result)
-	}else {
-		fmt.Println("Error ", err.Error())
-	}
-
-	// parse to int
-	number, err := strconv.ParseInt("1024", 10,32)
-	if err == nil{
-		fmt.Println(number)
-	}else {
-		fmt.Println("Error ", err.Error())
-	}
-
-	value := strconv.FormatInt(10000, 16)
-	fmt.Println(value)
+	fmt.Println(math.Round(1.8))
+	fmt.Println(math.Round(1.3))
+	fmt.Println(math.Floor(1.8))
+	fmt.Println(math.Ceil(1.3))
+	fmt.Println(math.Max(10,20))
+	fmt.Println(math.Min(10,20))
 }
