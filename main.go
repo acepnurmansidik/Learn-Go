@@ -2,17 +2,28 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"strconv"
 )
 
 func main() {
-	// TODO: PACKAGE STRING
+	// TODO: PACKAGE STRICONV
 
-	fmt.Println(strings.Contains("Acep Nurman Sidik", "Nurman"))
-	fmt.Println(strings.Split("Acep Nurman Sidik", " ")[0])
-	fmt.Println(strings.ToLower("Acep Nurman Sidik"))
-	fmt.Println(strings.ToUpper("Acep Nurman Sidik"))
-	fmt.Println(strings.Trim("    Acep Nurman Sidik      ", " "))
-	fmt.Println(strings.ReplaceAll("Acep Nurman Sidik", "Nurman","Budi"))
+	// parse to bool
+	result, err := strconv.ParseBool("true")
+	if err == nil{
+		fmt.Println(result)
+	}else {
+		fmt.Println("Error ", err.Error())
+	}
 
+	// parse to int
+	number, err := strconv.ParseInt("1024", 10,32)
+	if err == nil{
+		fmt.Println(number)
+	}else {
+		fmt.Println("Error ", err.Error())
+	}
+
+	value := strconv.FormatInt(10000, 16)
+	fmt.Println(value)
 }
