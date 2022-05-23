@@ -2,37 +2,21 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	"time"
 )
 
-type User struct{
-	Name string
-	Age int
-}
-
-type UserSlice []User
-
-func (value UserSlice) Len() int {
-	return len(value)
-}
-
-func (value UserSlice) Less(i, j int) bool{
-	return value[i].Age < value[j].Age 
-}
-
-func (value UserSlice) Swap(i, j int){
-	value[i], value[j] = value[j], value[i]
-}
 
 func main() {
-	// TODO: PACKAGE SORT
-	users := []User{
-		{"Acep", 35},
-		{"Nurman", 21},
-		{"Sidik", 40},
-	}
+	// TODO: PACKAGE TIME
 
-	fmt.Println(users)
-	sort.Sort(UserSlice(users))
-	fmt.Println(users)
+	now := time.Now()
+
+	fmt.Println(now)
+	fmt.Println(now.Year())
+
+	utc := time.Date(2022, 10, 10, 10, 10, 10, 10, time.UTC)
+	fmt.Println(utc)
+
+	parse, _ := time.Parse(time.RFC3339, "2022-05-24")
+	fmt.Println(parse)
 }
