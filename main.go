@@ -2,21 +2,18 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"reflect"
 )
 
+type Sample struct {
+	Name string
+}
 
 func main() {
-	// TODO: PACKAGE TIME
+	// TODO: PACKAGE REFLECT
 
-	now := time.Now()
-
-	fmt.Println(now)
-	fmt.Println(now.Year())
-
-	utc := time.Date(2022, 10, 10, 10, 10, 10, 10, time.UTC)
-	fmt.Println(utc)
-
-	parse, _ := time.Parse(time.RFC3339, "2022-05-24")
-	fmt.Println(parse)
+	sample := Sample{"Acep"}
+	sampleType := reflect.TypeOf(sample)
+	fmt.Println(sampleType.NumField())
+	fmt.Println(sampleType.Field(0).Name)
 }
